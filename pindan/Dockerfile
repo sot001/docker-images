@@ -1,6 +1,5 @@
 # jekyll
-#FROM jekyll/jekyll:latest
-FROM sotirk/pindan:v1
+FROM jekyll/jekyll:latest
 
 MAINTAINER Kristian Sotiroff <kristians@gmail.com>
 
@@ -8,10 +7,10 @@ MAINTAINER Kristian Sotiroff <kristians@gmail.com>
 #RUN gem install jekyll bundler
 
 # bootstrapping
-RUN cd /srv/jekyll/pindan/
+VOLUME /srv/jekyll/
 
 # clone in site
 #RUN git clone https://gerrit.wikimedia.org/r/p/mediawiki/core.git /var/www/mediawiki
 
 # Set the default command to execute
-CMD bundle exec jekyll serve
+CMD jekyll serve -s /srv/jekyll/pindan-wiki/
