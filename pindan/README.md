@@ -1,3 +1,5 @@
-run with
+run (on port 81) with
 
-''''docker run --rm --label=pindan --volume=$(pwd):/srv/jekyll -p 8080:4000 sotirk/pindan''''
+''''docker run -d --name=pindan --volume=$(pwd):/srv/jekyll -p 81:4000 sotirk/pindan''''
+
+nginx reverse proxy it?
